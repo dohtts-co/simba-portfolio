@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simba Conteh — CV</title>
+  <meta name="description" content="CV of Simba Conteh — Web Developer & Multimedia Producer based in Manchester.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0D1B2A;
+      --navy-2:  #152336;
+      --accent:  #C05A28;
+      --accent-l:#D4793F;
+      --base:    #F6F1E9;
+      --muted:   #7A95A5;
+      --border:  rgba(255,255,255,0.08);
+      --card:    rgba(255,255,255,0.04);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--base);
+      background: var(--navy);
+      min-height: 100vh;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,27,42,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 2rem;
+    }
+    .topbar-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--base);
+      letter-spacing: -0.01em;
+    }
+    .topbar-actions { display: flex; gap: 0.75rem; align-items: center; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.15s, transform 0.15s;
+      border: none;
+    }
+    .btn:hover { opacity: 0.85; transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* ── HEADER ── */
+    .cv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .cv-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--base);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .cv-role {
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .cv-contact {
+      text-align: right;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.9;
+      flex-shrink: 0;
+    }
+    .cv-contact a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    .cv-contact a:hover { color: var(--accent-l); }
+
+    /* ── SECTION ── */
+    .cv-section { margin-bottom: 2.2rem; }
+    .cv-section:last-child { margin-bottom: 0; }
+    .sec-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.2rem;
+    }
+
+    /* ── PROFILE ── */
+    .profile-text {
+      font-size: 0.92rem;
+      color: rgba(246,241,233,0.75);
+      line-height: 1.75;
+      max-width: 720px;
+    }
+
+    /* ── TWO COLS ── */
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 3rem;
+    }
+    @media (max-width: 640px) {
+      .two-cols { grid-template-columns: 1fr; }
+    }
+
+    /* ── ENTRY ── */
+    .entry { margin-bottom: 1.3rem; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.15rem;
+    }
+    .entry-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--base);
+    }
+    .entry-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .entry-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+    .entry-grade {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: var(--accent-l);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    ul.dots { list-style: none; padding: 0; margin-top: 0.3rem; }
+    ul.dots li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 0.82rem;
+      color: rgba(246,241,233,0.65);
+      line-height: 1.6;
+      margin-bottom: 0.2rem;
+    }
+    ul.dots li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 560px) {
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+    }
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .project-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--base);
+    }
+    .project-url {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+    .project-url:hover { color: var(--accent-l); }
+    .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 0.5rem; }
+    .tag {
+      font-size: 0.65rem;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .project-desc {
+      font-size: 0.78rem;
+      color: rgba(246,241,233,0.55);
+      line-height: 1.55;
+    }
+
+    /* ── SKILLS ── */
+    .skill-row {
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+      font-size: 0.84rem;
+    }
+    .skill-cat {
+      font-weight: 600;
+      color: var(--base);
+      min-width: 90px;
+      flex-shrink: 0;
+    }
+    .skill-val { color: rgba(246,241,233,0.6); }
+
+    /* ── INTERESTS ── */
+    .interests-text {
+      font-size: 0.84rem;
+      color: rgba(246,241,233,0.55);
+      line-height: 1.8;
+    }
+
+    /* ── REFERENCES ── */
+    .ref-text {
+      font-size: 0.84rem;
+      color: rgba(246,241,233,0.45);
+    }
+
+    /* ── DIVIDER ── */
+    .page-divider {
+      border: none;
+      border-top: 1px dashed rgba(255,255,255,0.1);
+      margin: 2.5rem 0;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: #fff; color: #0D1B2A; }
+      :root {
+        --navy: #fff;
+        --base: #0D1B2A;
+        --muted: #5A7A8A;
+        --border: #E2E8F0;
+        --card: #F8FAFC;
+        --accent: #C05A28;
+        --accent-l: #D4793F;
+      }
+      .topbar { display: none; }
+      .wrap { padding: 0; max-width: 100%; }
+      .cv-header { border-color: #0D1B2A; }
+      ul.dots li { color: #334155; }
+      .profile-text, .skill-val, .interests-text, .ref-text, .project-desc { color: #475569; }
+      .page-divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <nav class="topbar">
+    <span class="topbar-name">Simba Conteh — CV</span>
+    <div class="topbar-actions">
+      <a class="btn btn-ghost" href="https://simba-portfolio.vercel.app/" target="_blank">← Portfolio</a>
+      <button class="btn btn-accent" onclick="window.print()">⬇ Download PDF</button>
+    </div>
+  </nav>
+
+  <div class="wrap">
+
+    <!-- HEADER -->
+    <header class="cv-header">
+      <div>
+        <div class="cv-name">Simba Conteh</div>
+        <div class="cv-role">Web Developer &amp; Multimedia Producer</div>
+      </div>
+      <div class="cv-contact">
+        <a href="mailto:simbaconteh1@gmail.com">simbaconteh1@gmail.com</a><br>
+        07709 746 154<br>
+        <a href="https://www.linkedin.com/in/simba-conteh-7639aa296/" target="_blank">linkedin.com/in/simba-conteh</a><br>
+        <a href="https://simba-portfolio.vercel.app/" target="_blank">simba-portfolio.vercel.app</a><br>
+        Manchester, UK
+      </div>
+    </header>
+
+    <!-- PROFILE -->
+    <section class="cv-section">
+      <div class="sec-title">Profile</div>
+      <p class="profile-text">
+        Final-year Digital Business &amp; Technology student at Manchester Metropolitan University, on track for a High 2:1.
+        I design and build full-stack web applications and produce video content for brands and personal projects.
+        Comfortable across the full stack — from Next.js and TypeScript on the frontend through to PostgreSQL and C# on the backend.
+        Founder of <strong style="color:var(--base)">dohtts.co</strong>, a multimedia production company delivering web and videography services to clients.
+      </p>
+    </section>
+
+    <!-- EDUCATION + EXPERIENCE -->
+    <section class="cv-section">
+      <div class="two-cols">
+
+        <!-- Education -->
+        <div>
+          <div class="sec-title">Education</div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title">Manchester Metropolitan University</span>
+              <span class="entry-date">2023 — 2026</span>
+            </div>
+            <div class="entry-sub">BSc (Hons) Digital Business &amp; Technology</div>
+            <div class="entry-grade">High 2:1 Predicted</div>
+            <ul class="dots">
+              <li>Advanced Web Development — 78%</li>
+              <li>Technology Regulations — 80%</li>
+              <li>Web Application Development — 72%</li>
+              <li>Managing Technology Projects — 65%</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title">Pendleton Sixth Form College</span>
+              <span class="entry-date">2021 — 2023</span>
+            </div>
+            <div class="entry-sub">A-Levels &amp; BTEC</div>
+            <ul class="dots">
+              <li>Financial Studies — B</li>
+              <li>Media Studies — B</li>
+              <li>BTEC Business — Distinction</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title">The East Manchester Academy</span>
+              <span class="entry-date">2016 — 2021</span>
+            </div>
+            <div class="entry-sub">7 GCSEs (grades 5–6) &amp; BTEC Distinction</div>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div>
+          <div class="sec-title">Experience</div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title">Founder &amp; Multimedia Producer</span>
+              <span class="entry-date">2026 — Present</span>
+            </div>
+            <div class="entry-sub">dohtts.co — Self-employed</div>
+            <ul class="dots">
+              <li>Designing and developing client websites from brief to live deployment.</li>
+              <li>Producing and editing video content for brands using DaVinci Resolve.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title">Line Chef</span>
+              <span class="entry-date">Jan 2025 — Present</span>
+            </div>
+            <div class="entry-sub">Hello Oriental — Manchester</div>
+            <ul class="dots">
+              <li>Coordinated across stations in a fast-paced kitchen, meeting peak-hour service targets.</li>
+              <li>Implemented prep rotation and waste-minimisation practices, improving team workflow.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title">Web Developer &amp; Photographer</span>
+              <span class="entry-date">Jun — Aug 2024</span>
+            </div>
+            <div class="entry-sub">3minutes.wtf — Volunteer</div>
+            <ul class="dots">
+              <li>Built an interactive awareness platform with survey-driven UX and personalised action pathways.</li>
+              <li>Delivered a responsive front-end that increased user retention and engagement.</li>
+              <li>Captured and curated ethical photography for storytelling.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title">Team Leader</span>
+              <span class="entry-date">Nov 2023 — Jan 2025</span>
+            </div>
+            <div class="entry-sub">GAME — Manchester</div>
+            <ul class="dots">
+              <li>Oversaw daily store operations, ensuring stock accuracy and smooth workflow.</li>
+              <li>Trained and mentored new staff, improving customer experience.</li>
+              <li>Resolved complex customer issues with empathy, reducing complaint frequency.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title">Counter Assistant</span>
+              <span class="entry-date">May — Sept 2023</span>
+            </div>
+            <div class="entry-sub">SCOOP — Manchester</div>
+            <ul class="dots">
+              <li>Managed cash transactions with precision and balanced daily tills.</li>
+              <li>Supported inventory control and merchandising for seasonal stock.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="page-divider">
+
+    <!-- PROJECTS -->
+    <section class="cv-section">
+      <div class="sec-title">Projects</div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-name">AM Volleyball</span>
+            <a class="project-url" href="https://am-volleyball.vercel.app/" target="_blank">am-volleyball.vercel.app ↗</a>
+          </div>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">Tailwind CSS</span><span class="tag">Vercel</span></div>
+          <div class="project-desc">Club website for AM Volleyball — responsive design focused on team info and events.</div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-name">Pott St Bagels</span>
+            <a class="project-url" href="https://pott-st-bagels.vercel.app/" target="_blank">pott-st-bagels.vercel.app ↗</a>
+          </div>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span></div>
+          <div class="project-desc">Artisan bagel shop website with menu presentation and brand identity for a local Manchester business.</div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-name">Floranica</span>
+            <a class="project-url" href="https://floranica.vercel.app/" target="_blank">floranica.vercel.app ↗</a>
+          </div>
+          <div class="tags"><span class="tag">ASP.NET</span><span class="tag">C#</span><span class="tag">SQL Server</span><span class="tag">Next.js</span><span class="tag">Prisma</span></div>
+          <div class="project-desc">Full-stack inventory management system — secure admin login, CRUD operations, record filtering, and relational database integration.</div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-name">3 Minutes</span>
+            <a class="project-url" href="https://3minutes.wtf" target="_blank">3minutes.wtf ↗</a>
+          </div>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <div class="project-desc">Interactive awareness platform on animal cruelty — survey-driven UX, multimedia resources, and curated photography.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="cv-section">
+      <div class="sec-title">Technical Skills</div>
+      <div class="skill-row"><span class="skill-cat">Languages</span><span class="skill-val">JavaScript, TypeScript, C#, SQL, HTML, CSS</span></div>
+      <div class="skill-row"><span class="skill-cat">Frameworks</span><span class="skill-val">Next.js, React 19, ASP.NET Web Forms, Tailwind CSS v4, Prisma ORM</span></div>
+      <div class="skill-row"><span class="skill-cat">Databases</span><span class="skill-val">PostgreSQL (Neon), SQL Server, SQLite</span></div>
+      <div class="skill-row"><span class="skill-cat">Tools</span><span class="skill-val">Git, GitHub, Vercel, Figma, DaVinci Resolve, CapCut, Power BI, Visual Studio 2022</span></div>
+      <div class="skill-row"><span class="skill-cat">Concepts</span><span class="skill-val">Full-stack development, REST APIs, JWT auth, CI/CD, responsive design, database migrations</span></div>
+    </section>
+
+    <!-- INTERESTS -->
+    <section class="cv-section">
+      <div class="sec-title">Interests &amp; Hobbies</div>
+      <p class="interests-text">
+        Videography &amp; colour grading &nbsp;&mdash;&nbsp; Cinematography &nbsp;&mdash;&nbsp; Streetwear &amp; visual culture &nbsp;&mdash;&nbsp; Football &nbsp;&mdash;&nbsp; Digital brand building &nbsp;&mdash;&nbsp; Volleyball &nbsp;&mdash;&nbsp; Badminton &nbsp;&mdash;&nbsp; Padel &nbsp;&mdash;&nbsp; Bouldering
+      </p>
+    </section>
+
+    <!-- REFERENCES -->
+    <section class="cv-section">
+      <div class="sec-title">References</div>
+      <p class="ref-text">Available upon request.</p>
+    </section>
+
+  </div>
+
+</body>
+</html>

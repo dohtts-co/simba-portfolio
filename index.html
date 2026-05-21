@@ -870,6 +870,8 @@
 
   <script>
   'use strict';
+  if (history.scrollRestoration) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
 
   // Measure in an isolated off-screen element so flex/overflow layout
   // constraints from the real DOM tree cannot affect scrollWidth.

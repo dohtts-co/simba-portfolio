@@ -1,0 +1,162 @@
+recent projects
+Volleyball Website: Made 20/05/2026 - link https://am-volleyball.vercel.app/
+Bagel Website: Made 14/05/2026 - link https://pott-st-bagels.vercel.app/
+Portfolio Website: Made 18/05/2026 - link https://falkor-portfolio-production.up.railway.app/portfolio.html
+
+early 2025 project: 
+Floranica: link  https://floranica.vercel.app/
+
+My name is simba conteh, I currently develop websites and I have had a growing passion for it. I am in the making of making more video personal project please keep in tune of those.
+
+heres my Instagram for my personal video projects: https://www.instagram.com/simbasarchivesale/?hl=en
+heres is my Instagram for my client videography and website design page:
+https://www.instagram.com/dohtts.co/?hl=en
+
+heres my linked in : https://www.linkedin.com/in/simba-conteh-7639aa296/
+
+LANGUAGES & TECHNOLOGIES LEARNED
+=================================
+Based on all projects built together: Floranica (Next.js), Flower (ASP.NET),
+Yard Venue Management System, am WEBSITE, er assignment, georgie-mc-aesthetics.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROGRAMMING LANGUAGES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  C#
+    - Used in: Flower, Yard Venue Management System, am WEBSITE, er assignment
+    - Concepts: classes, namespaces, methods, event handlers, LINQ,
+      Session management, parameterised SQL queries, SqlConnection/SqlCommand
+
+  TypeScript
+    - Used in: Floranica (Next.js), georgie-mc-aesthetics
+    - Concepts: types, interfaces, async/await, generics, union types,
+      Server Actions, React component typing
+
+  JavaScript
+    - Used in: Floranica (client components), Next.js config files
+    - Concepts: ES modules, arrow functions, useState/useTransition hooks
+
+  SQL
+    - Used in: Flower (SQL Server), Floranica (SQLite dev / PostgreSQL prod)
+    - Concepts: SELECT, INSERT, UPDATE, DELETE, WHERE, JOIN,
+      parameterised queries, migrations, seeding
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MARKUP & STYLING LANGUAGES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  HTML
+    - Used in: Flower (.aspx pages), Next.js JSX/TSX
+    - Concepts: semantic elements, forms, tables, navigation, master pages
+
+  CSS
+    - Used in: Flower (style.css, record.css), Floranica (globals.css)
+    - Concepts: flexbox, grid, box model, hover states, responsive layout,
+      border-radius, box-shadow, colour theming
+
+  JSX / TSX
+    - Used in: Floranica, georgie-mc-aesthetics
+    - Concepts: component syntax, props, conditional rendering, mapping arrays,
+      inline styles, className
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FRAMEWORKS & LIBRARIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Next.js 16 (React framework)
+    - App Router, file-based routing, layouts, server components,
+      client components, Server Actions, dynamic/static rendering,
+      API routes, force-dynamic, metadata
+
+  React 19
+    - useActionState, useTransition, useEffect, useState, useRouter,
+      Server/Client component model
+
+  ASP.NET Web Forms (.NET Framework 4.7.2)
+    - .aspx pages, Master Pages, code-behind (.aspx.cs), postbacks,
+      GridView, DropDownList, Label, TextBox, Button server controls,
+      Session state, Response.Redirect
+
+  Tailwind CSS v4
+    - Utility classes, responsive prefixes, flex/grid utilities,
+      custom inline styles alongside utilities
+
+  Prisma ORM v7
+    - Schema definition, models, migrations (db push / migrate dev),
+      seeding, Prisma Client, relations, upsert/create/update/delete/findMany
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DATABASES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  SQL Server / LocalDB
+    - Used in: Flower (FlowerDB.mdf)
+    - Concepts: .mdf database files, LocalDB connection strings,
+      SqlDataAdapter, DataTable, DataReader
+
+  SQLite
+    - Used in: Floranica (local development), georgie-mc-aesthetics
+    - Concepts: file-based database, better-sqlite3 adapter, dev.db
+
+  PostgreSQL (Neon)
+    - Used in: Floranica (production on Vercel)
+    - Concepts: cloud-hosted serverless Postgres, connection pooling,
+      connection strings, Neon adapter for Prisma
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TOOLS & PLATFORMS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Git & GitHub
+    - git init, add, commit, push, remote, .gitignore
+    - GitHub repo creation via GitHub CLI (gh)
+
+  Vercel
+    - Deploying Next.js apps, environment variables,
+      production + preview environments, serverless functions
+
+  Node.js / npm
+    - Package management, scripts (dev, build, start, seed),
+      postinstall hooks, npx, tsx runner
+
+  Visual Studio 2022
+    - ASP.NET Web Forms projects, IIS Express, solution files (.sln),
+      NuGet package management, code-behind model
+
+  Prisma CLI
+    - prisma generate, prisma db push, prisma migrate dev, prisma studio
+
+  Neon (cloud PostgreSQL)
+    - Project creation, connection pooling, connection strings,
+      serverless database for Vercel deployment
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONCEPTS ACROSS ALL PROJECTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Authentication       JWT sessions, bcrypt password hashing, session cookies,
+                       login/logout flows, protected routes
+
+  CRUD Operations      Create, Read, Update, Delete across both ASP.NET
+                       (SQL Server) and Next.js (Prisma + PostgreSQL)
+
+  Full-Stack Pattern   Frontend UI → Server Action / code-behind →
+                       Database → Response back to UI
+
+  Deployment           Local dev → GitHub → Vercel (CI/CD on push)
+
+  Database Migrations  Schema versioning, seeding initial data,
+                       switching databases (SQLite → PostgreSQL)
+
+  Security             Parameterised queries (no SQL injection),
+                       httpOnly cookies, server-only modules,
+                       environment variables for secrets
+
+

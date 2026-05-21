@@ -1095,10 +1095,18 @@
     fStatus.style.display = 'none';
 
     try {
-      // Replace with your HeroTofu / Formspree endpoint when ready:
-      // const res = await fetch('YOUR_ENDPOINT', { method:'POST', headers:{Accept:'application/json'}, body: new FormData(form) });
-      // if (!res.ok) throw new Error();
-      await new Promise(r => setTimeout(r, 900)); // dev simulation
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name:     form.querySelector('[name="Name"]').value,
+          email:    form.querySelector('[name="Email"]').value,
+          subject:  form.querySelector('[name="Subject"]').value,
+          message:  form.querySelector('[name="Message"]').value,
+          _gotcha:  form.querySelector('[name="_gotcha"]').value,
+        }),
+      });
+      if (!res.ok) throw new Error();
 
       form.style.transition = 'opacity .3s ease, transform .3s ease';
       form.style.opacity = '0'; form.style.transform = 'translateY(6px)';

@@ -1079,6 +1079,12 @@
     }, 120);
   });
 
+  // Tab title swap when user leaves
+  const originalTitle = document.title;
+  document.addEventListener('visibilitychange', () => {
+    document.title = document.hidden ? 'Wait, come back 🥺' : originalTitle;
+  });
+
   // Contact form
   const form      = document.getElementById('contact-form');
   const submitBtn = document.getElementById('submit-btn');
